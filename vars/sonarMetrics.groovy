@@ -9,5 +9,9 @@ withCredentials([usernamePassword(credentialsId: 'sonar_cred', passwordVariable:
   sh "curl -u ${username}:${password} -X GET 'http://ec2-3-133-107-212.us-east-2.compute.amazonaws.com:9000/api/measures/component?component=${ProjectName}&metricKeys=coverage,vulnerabilities,bugs,violations,complexity,tests,duplicated_lines,sqale_index' -o metrics.json"
 
 }
+  def jsonSlurper = new JsonSlurper()
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/metrics.json"),"UTF-8"))
+def metrics = jsonSlurper.parse(reader)
   return metrics
+
 }
