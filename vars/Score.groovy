@@ -1,6 +1,6 @@
 import groovy.json.*
 
-def call(jsondata,bitbucket,bamboo){
+def call(jsondata,bitbucket,bamboo,sonar){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.config.emails.email.size()
@@ -8,6 +8,7 @@ int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
+	jsonStringa.add(sonar)
    //jsonStringa.add(gitlab)
   //println(jsonStringa)
 /*def jsonStringa = bitbucket
@@ -42,6 +43,30 @@ int total=jsonObja.bitbucket.Commit_count
   }*/
   }
    if(jsonStringa[i].contains("Bamboo"))
+    {
+      name="bamboo"
+	   // metric="successfulbuilds"
+    //  def jsonStringb = bamboo
+def jsonObjb = readJSON text: jsonStringa[i]
+  //println(jsonObj)
+def total=jsonObjb.Bamboo.totalBuilds
+  def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
+	    def fcnt=jsonObjb.Bamboo.teamfailurebuild_cnt
+      
+ // def res=bamboo1.bamboo.teamsuccessbuild_cnt
+ // def obj = JSON.parse(bamboo1)
+ //println(cnt)
+	    score=total
+	    LIST.add(["toolName":name,"metric":"total_builds","value":score])
+	    score=0
+ score=scnt
+	    LIST.add(["toolName":name,"metric":"success_builds","value":score])
+	    score=0
+	     score=fcnt
+	    LIST.add(["toolName":name,"metric":"failure_builds","value":score])
+	    score=0
+    }
+	  if(jsonStringa[i].contains("Bamboo"))
     {
       name="bamboo"
 	   // metric="successfulbuilds"
