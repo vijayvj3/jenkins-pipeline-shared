@@ -29,7 +29,7 @@ for(i=0;i<jsonStringa.size();i++)
 if(jsonStringa[i].contains("bitbucket"))
     {
       name="bitbucket"
-	    metric="commits"
+	  //  metric="commits"
 //def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa[i]
 int total=jsonObja.bitbucket.Commit_count
