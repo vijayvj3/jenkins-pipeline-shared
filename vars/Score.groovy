@@ -35,8 +35,8 @@ def jsonObja = readJSON text: jsonStringa[i]
 int total=jsonObja.bitbucket.Commit_count
  // println(jsonObja)
   //println(total)
- score=total
-	    LIST.add(["toolName":name,"metric":"commits","value":score])
+ 
+	    LIST.add(["toolName":name,"metric":"commits","value":total])
  /* if(total>5)
   {
     score=score+10
@@ -56,40 +56,40 @@ def total=jsonObjb.Bamboo.totalBuilds
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
-	    score=total
-	    LIST.add(["toolName":name,"metric":"total_builds","value":score])
-	    score=0
- score=scnt
-	    LIST.add(["toolName":name,"metric":"success_builds","value":score])
-	    score=0
-	     score=fcnt
-	    LIST.add(["toolName":name,"metric":"failure_builds","value":score])
-	    score=0
+	  
+	    LIST.add(["toolName":name,"metric":"total_builds","value":total])
+	    
+ 
+	    LIST.add(["toolName":name,"metric":"success_builds","value":scnt])
+	    
+
+	    LIST.add(["toolName":name,"metric":"failure_builds","value":fcnt])
+	    
     }
-	  if(jsonStringa[i].contains("Bamboo"))
-    {
-      name="bamboo"
+	  
+    
+      
 	   // metric="successfulbuilds"
     //  def jsonStringb = bamboo
-def jsonObjb = readJSON text: jsonStringa[i]
+
   //println(jsonObj)
-def total=jsonObjb.Bamboo.totalBuilds
-  def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
-	    def fcnt=jsonObjb.Bamboo.teamfailurebuild_cnt
+
+
+	 
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
-	    score=total
-	    LIST.add(["toolName":name,"metric":"total_builds","value":score])
-	    score=0
- score=scnt
-	    LIST.add(["toolName":name,"metric":"success_builds","value":score])
-	    score=0
-	     score=fcnt
-	    LIST.add(["toolName":name,"metric":"failure_builds","value":score])
-	    score=0
-    }
+	   
+	  
+
+
+	
+	 
+
+	
+	
+
 
 	  //JSON1[i]=LIST.clone()
     //println(score)
