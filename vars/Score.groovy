@@ -88,32 +88,19 @@ def total=jsonObjb.Bamboo.totalBuilds
 	  
     
       
-	   // metric="successfulbuilds"
-    //  def jsonStringb = bamboo
-
-  //println(jsonObj)
-
-
-	 
-      
- // def res=bamboo1.bamboo.teamsuccessbuild_cnt
- // def obj = JSON.parse(bamboo1)
- //println(cnt)
-	   
-	  
-
-
-	
-	 
-
-	
-	
-
-
-	  //JSON1[i]=LIST.clone()
-    //println(score)
-   //JSON.add(JSON1[i])  
-	  //LIST.clear()
+	  if(jsonStringa[i].contains("sonar"))
+    {
+	    name="sonar"
+	    def jsonObjd= readJSON text: jsonStringa[i]
+	    //print jsonObjc
+	    for(i=0;i<jsonObjd.sonar.metrics.component.measures.size();i++){
+		    //print jsonObjc.Sonar.Metrics.component.measures
+    def sonar_metric=jsonObjd.sonar.metrics.component.measures[i].metric
+		    def d=jsonObjd.sonar.metrics.component.measures[i].value
+    double data = Double.parseDouble(d); 
+       LIST.add(["toolName":name,"metricName":sonar_metric,"value":data])
+	    }
+    }
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
