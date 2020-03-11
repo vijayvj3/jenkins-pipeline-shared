@@ -60,7 +60,7 @@ def cnt =jsonObjc.gitlab.commit_cnt
   {
     score=score+10
   }*/
-  }*/
+//  }
    if(jsonStringa[i].contains("Bamboo") && ci=="bamboo")
     {
       name="bamboo"
