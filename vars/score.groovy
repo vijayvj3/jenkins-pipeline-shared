@@ -56,11 +56,11 @@ def cnt =jsonObjc.gitlab.commit_cnt
   //println(total)
  
 	    LIST.add(["toolName":name,"metric":"commits","value":cnt])
- /* if(total>5)
+ if(total>5)
   {
     score=score+10
+  }
   }*/
-//  }
    if(jsonStringa[i].contains("Bamboo") && ci=="bamboo")
     {
       name="bamboo"
