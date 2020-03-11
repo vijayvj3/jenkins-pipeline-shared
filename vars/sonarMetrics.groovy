@@ -26,3 +26,4 @@ withCredentials([usernamePassword(credentialsId: 'sonar_cred1', passwordVariable
   echo 'metrics collected'
 }
   create()
+}
