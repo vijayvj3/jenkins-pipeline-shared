@@ -7,7 +7,7 @@ def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.riglet_info.auth_users.size()
 	def team=jsonObj.riglet_info.name
 List<String> jsonStringa= new ArrayList<String>();
-  jsonStringa.add(github)
+  jsonStringa.add(gitlab)
    jsonStringa.add(jenkins)
 	jsonStringa.add(sonar)
    List<String> LIST = new ArrayList<String>();
