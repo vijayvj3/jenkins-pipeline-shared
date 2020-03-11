@@ -9,7 +9,7 @@ String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
-int ecount = jsonObj.config.emails.email.size()
+int ecount = jsonObj.riglet_info.auth_users.size()
 println("No of users "+ ecount)
 println(Key)
 println(repoName)
@@ -33,7 +33,7 @@ for(i=0;i<ecount;i++)
   for(j=0;j<total;j++)
   {
 
- if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
+ if(jsonObj.riglet_info.auth_users[i]==resultJson.values.author[j].emailAddress)
 	     {
 	JSON.add(resultJson.values[j])
 	//println(JSON) 
@@ -43,7 +43,7 @@ for(i=0;i<ecount;i++)
 	 //  println(USER)
          	
  JSON1[i]=JSON.clone()
- JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JSON1[i],"Commit_count":count])
+ JCOPY.add(["Email":jsonObj.riglet_info.auth_users[i],"Individual_commit":JSON1[i],"Commit_count":count])
 	
 JSON.clear()
 }
