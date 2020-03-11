@@ -46,7 +46,7 @@ def resultJson = jsonSlurper.parse(reader)
 	   def cnf=0
 	  
     def email=jsonObj.riglet_info.auth_users[j] 
-  for(i=8;i<bno;i++)
+  for(i=0;i<bno;i++)
   {
  
    
@@ -80,7 +80,7 @@ def resultJson = jsonSlurper.parse(reader)
 	  
 	   
    }
-	for(i=8;i<bno;i++)
+	for(i=0;i<bno;i++)
   {
   // def date=resultJson.results.result[i].buildCompletedDate
    def state=resultJson.results.result[i].buildState
