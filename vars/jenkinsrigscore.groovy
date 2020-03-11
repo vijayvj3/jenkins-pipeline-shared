@@ -21,7 +21,7 @@ if(jsonStringa[i].contains("gitlab"))
     name="gitlab"
     def jsonObj1 = readJSON text: jsonStringa[i]
   def cnt =jsonObjc.gitlab.commit_cnt
-  LIST.add(["toolName":name,"metricName":"commits","value":cnt)
+  LIST.add(["toolName":name,"metricName":"commits","value":cnt])
    }
    if(jsonStringa[i].contains("JENKINS"))
     {
