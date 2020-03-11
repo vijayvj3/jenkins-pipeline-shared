@@ -1,6 +1,6 @@
 import groovy.json.*
 
-def call(jsondata,bitbucket,bamboo,sonar,gitlab){
+def call(jsondata,bamboo,sonar,gitlab){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.riglet_info.auth_users.size()
@@ -8,7 +8,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	def scm=jsonObj.scm.tool.name
 	def ci=jsonObj.scm.tool.name
 List<String> jsonStringa= new ArrayList<String>();
-  jsonStringa.add(bitbucket)
+  //jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
 	jsonStringa.add(sonar)
 	jsonStringa.add(gitlab)
@@ -29,7 +29,7 @@ for(i=0;i<jsonStringa.size();i++)
     int score=0
     String name="  "
 	  String metric=" "
-if(jsonStringa[i].contains("bitbucket")&& scm=="bitbucket")
+/*if(jsonStringa[i].contains("bitbucket")&& scm=="bitbucket")
     {
       name="bitbucket"
 	  //  metric="commits"
@@ -44,8 +44,8 @@ int total=jsonObja.bitbucket.Commit_count
   {
     score=score+10
   }*/
-  }
-	  if(jsonStringa[i].contains("gitlab") && scm=="gitlab")
+  }*/
+	  if(jsonStringa[i].contains("gitlab") )
     {
       name="gitlab"
 	  //  metric="commits"
@@ -61,7 +61,7 @@ def cnt =jsonObjc.gitlab.commit_cnt
     score=score+10
   }*/
   }
-   if(jsonStringa[i].contains("Bamboo") && ci=="bamboo")
+   if(jsonStringa[i].contains("Bamboo") )
     {
       name="bamboo"
 	   // metric="successfulbuilds"
