@@ -8,7 +8,7 @@ def call(jsondata){
       String a=jsonObj.scm.repositories.repository.repo_name
 String Name=a.replaceAll("\\[", "").replaceAll("\\]","");
      withCredentials([usernamePassword(credentialsId: 'gitlab_cred', passwordVariable: 'password', usernameVariable:'username')]) {
-      sh "curl -X GET    -u $username:$password https://gitlab.com/api/v4/users/5418155/projects -o outputgitlab.json"
+      sh "curl -X GET    -u $username:$password https://gitlab.com/api/v4/users/4968652/projects -o outputgitlab.json"
      }
    def jsonSlurper = new JsonSlurper()
  def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/outputgitlab.json"),"UTF-8"))
