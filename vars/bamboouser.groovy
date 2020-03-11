@@ -7,9 +7,10 @@ def call(JSON,IP)
 {
 def jsonString = JSON
 def jsonObj = readJSON text: jsonString
-def mailcount = jsonObj.config.emails.email.size()
+def mailcount = jsonObj.riglet_info.auth_users.size()
+	def key= jsonObj.projectplankey.key
 
-sh "curl  -X GET  -u rig:rigaDapt@devOps '${IP}/rest/api/latest/result/LAT-WEB.json?max-result=50&expand=results.result.artifacts&expand=changes.change.files&start-index=0' -o outputbamboo.json"
+	sh "curl  -X GET  -u rig:rigaDapt@devOps '${IP}/rest/api/latest/result/${key}.json?max-result=50&expand=results.result.artifacts&expand=changes.change.files&start-index=0' -o outputbamboo.json"
 	def jsonSlurper = new JsonSlurper()
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/outputbamboo.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
