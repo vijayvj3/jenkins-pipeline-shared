@@ -9,9 +9,9 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	def ci=jsonObj.scm.tool.name
 List<String> jsonStringa= new ArrayList<String>();
   //jsonStringa.add(bitbucket)
-   jsonStringa.add(bamboo)
+   jsonStringa.add(gitlab)
+	jsonStringa.add(bamboo)
 	jsonStringa.add(sonar)
-	jsonStringa.add(gitlab)
    //jsonStringa.add(gitlab)
   //println(jsonStringa)
 /*def jsonStringa = bitbucket
@@ -29,22 +29,7 @@ for(i=0;i<jsonStringa.size();i++)
     int score=0
     String name="  "
 	  String metric=" "
-/*if(jsonStringa[i].contains("bitbucket")&& scm=="bitbucket")
-    {
-      name="bitbucket"
-	  //  metric="commits"
-//def jsonStringa = bitbucket
-def jsonObja = readJSON text: jsonStringa[i]
-int total=jsonObja.bitbucket.Commit_count
- // println(jsonObja)
-  //println(total)
- 
-	    LIST.add(["toolName":name,"metric":"commits","value":total])
- if(total>5)
-  {
-    score=score+10
-  }
-  }*/
+
 	  if(jsonStringa[i].contains("gitlab") )
     {
       name="gitlab"
