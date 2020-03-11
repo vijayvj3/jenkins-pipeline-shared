@@ -40,10 +40,10 @@ int total=jsonObja.bitbucket.Commit_count
   //println(total)
  
 	    LIST.add(["toolName":name,"metric":"commits","value":total])
- /* if(total>5)
+ if(total>5)
   {
     score=score+10
-  }*/
+  }
   }*/
 	  if(jsonStringa[i].contains("gitlab") )
     {
