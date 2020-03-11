@@ -44,7 +44,7 @@ def resultJson = jsonSlurper.parse(reader)
 	   def cns=0
 	   def cnf=0
 	  
-    def email=jsonObj.config.emails.email[j] 
+    def email=jsonObj.riglet_info.auth_users[j] 
   for(i=0;i<50;i++)
   {
  
