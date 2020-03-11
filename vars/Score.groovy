@@ -30,7 +30,7 @@ for(i=0;i<jsonStringa.size();i++)
     String name="  "
 	  String metric=" "
 
-	  if(jsonStringa[i].contains("gitlab") )
+	  if(jsonStringa[i].contains("gitlab"))
     {
       name="gitlab"
 	  //  metric="commits"
@@ -46,7 +46,7 @@ def cnt =jsonObjc.gitlab.commit_cnt
     score=score+10
   }*/
   }
-   if(jsonStringa[i].contains("Bamboo") )
+   if(jsonStringa[i].contains("Bamboo"))
     {
       name="bamboo"
 	   // metric="successfulbuilds"
