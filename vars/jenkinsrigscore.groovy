@@ -1,7 +1,7 @@
 import groovy.json.*
 	
 
-def call(jsondata,github,jenkins,sonar){
+def call(jsondata,gitlab,jenkins,sonar){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.riglet_info.auth_users.size()
