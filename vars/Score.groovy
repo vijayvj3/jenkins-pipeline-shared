@@ -1,6 +1,6 @@
 import groovy.json.*
 
-def call(jsondata,bamboo,sonar,gitlab){
+def call(jsondata,gitlab,bamboo,sonar){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.riglet_info.auth_users.size()
