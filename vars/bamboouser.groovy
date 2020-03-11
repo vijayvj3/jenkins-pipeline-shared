@@ -9,7 +9,7 @@ def jsonString = JSON
 def jsonObj = readJSON text: jsonString
 def mailcount = jsonObj.riglet_info.auth_users.size()
 	println(mailcount)
-	def key= jsonObj.ci.projectplankey.key
+def key= jsonObj.ci.projectplankey.key
 println(key)
 
 	sh "curl  -X GET  -u rig:rigaDapt@devOps '${IP}/rest/api/latest/result/${key}.json?max-result=50&expand=results.result.artifacts&expand=changes.change.files&start-index=0' -o outputbamboo.json"
