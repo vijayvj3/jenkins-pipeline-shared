@@ -61,7 +61,7 @@ def cnt =jsonObjc.gitlab.commit_cnt
     score=score+10
   }
   }*/
-   if(jsonStringa[i].contains("Bamboo") && ci=="bamboo")
+   if(jsonStringa[i].contains("Bamboo"))
     {
       name="bamboo"
 	   // metric="successfulbuilds"
