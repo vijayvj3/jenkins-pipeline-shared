@@ -51,7 +51,7 @@ def resultJson = jsonSlurper.parse(reader)
  
    
    def state=resultJson.results.result[i].buildState
-	  println(state)
+	 // println(state)
   
    if(resultJson.results.result[i].buildReason.contains(email) && state.equals("Successful"))
    {
@@ -84,8 +84,8 @@ def resultJson = jsonSlurper.parse(reader)
   {
   // def date=resultJson.results.result[i].buildCompletedDate
    def state=resultJson.results.result[i].buildState
-	  println("hi")
-	 println(state)
+	  //println("hi")
+	// println(state)
 
    
   if(state.equals("Successful"))
