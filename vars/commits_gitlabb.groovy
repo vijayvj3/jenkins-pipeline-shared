@@ -30,7 +30,7 @@ def commit(ids1,jsondata){
 	def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
       println(ids1)
-	int ecount = jsonObj.config.emails.email.size()
+	int ecount = jsonObj.riglet_info.auth_users.size()
          println("No of users "+ ecount)
       withCredentials([usernamePassword(credentialsId: 'gitlab_cred', passwordVariable: 'password', usernameVariable:'username')]) {
 	      sh "curl -X GET   -u $username:$password https://gitlab.com/api/v4/projects/${ids1}/repository/commits -o outputgitlab.json"
@@ -49,7 +49,7 @@ def total = resultJson.size()
 	 def jsonBuilder = new groovy.json.JsonBuilder()
 for(i=0;i<ecount;i++)
  {
-	def email=jsonObj.config.emails.email[i] 
+	def email=jsonObj.riglet_info.auth_users[i] 
   for(j=0;j<total;j++)
   {
 	 // println(jsonObj.config.emails.email[i])
