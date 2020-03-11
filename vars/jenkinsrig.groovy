@@ -12,7 +12,7 @@ def mailcount = jsonObj.riglet_info.auth_users.size()
 	String pro = jsonObj.ci.jobs.job.job_name
 	String ProjectName=pro.replaceAll("\\[", "").replaceAll("\\]","");
 	print(mailcount)
-/withCredentials([usernamePassword(credentialsId: 'jenkins_cred', passwordVariable: 'pass', usernameVariable: 'user')]) {
+withCredentials([usernamePassword(credentialsId: 'jenkins_cred', passwordVariable: 'pass', usernameVariable: 'user')]) {
 //sh "curl -X GET -g http://52.14.229.175:8080/job/${JOB_NAME}/api/json?tree=builds[id,result,changeSets[items[authorEmail]]] -u suneel:11035ac86f58bc32d03d8e873b7cc063a3 -o username.json"
 	sh "curl -X GET -g http://3.14.254.146:8080/job/${ProjectName}/api/json?tree=builds[id,result,changeSets[items[authorEmail]]] -o username.json"
 	}
