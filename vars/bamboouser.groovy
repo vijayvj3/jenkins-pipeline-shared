@@ -82,7 +82,7 @@ def resultJson = jsonSlurper.parse(reader)
    }
 	for(i=0;i<bno;i++)
   {
-   def date=resultJson.results.result[i].buildCompletedDate
+  // def date=resultJson.results.result[i].buildCompletedDate
    def state=resultJson.results.result[i].buildState
 	  println("hi")
 	 println(state)
