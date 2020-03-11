@@ -35,7 +35,7 @@ if(jsonStringa[i].contains("gitlab"))
 	    LIST.add(["toolName":name,"metricName":"successful_builds","value":scnt])
 	    LIST.add(["toolName":name,"metricName":"failure_builds","value":fcnt])
       }
-      if(jsonStringa[i].contains("Sonar"))
+      if(jsonStringa[i].contains("sonar"))
     {
 	    name="sonar"
 	    def jsonObjc = readJSON text: jsonStringa[i]
