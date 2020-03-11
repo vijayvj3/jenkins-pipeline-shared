@@ -40,10 +40,10 @@ if(jsonStringa[i].contains("gitlab"))
 	    name="sonar"
 	    def jsonObjc = readJSON text: jsonStringa[i]
 	    //print jsonObjc
-	    for(i=0;i<jsonObjc.Sonar.Metrics.component.measures.size();i++){
+	    for(i=0;i<jsonObjc.sonar.metrics.component.measures.size();i++){
 		    //print jsonObjc.Sonar.Metrics.component.measures
-    def sonar_metric=jsonObjc.Sonar.Metrics.component.measures[i].metric
-		    def d=jsonObjc.Sonar.Metrics.component.measures[i].value
+    def sonar_metric=jsonObjc.sonar.metrics.component.measures[i].metric
+		    def d=jsonObjc.sonar.metrics.component.measures[i].value
     double data = Double.parseDouble(d); 
        LIST.add(["toolName":name,"metricName":sonar_metric,"value":data])
 	    }
