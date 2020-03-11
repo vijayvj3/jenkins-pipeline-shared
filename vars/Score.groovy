@@ -12,6 +12,7 @@ List<String> jsonStringa= new ArrayList<String>();
    jsonStringa.add(gitlab)
 	jsonStringa.add(bamboo)
 	jsonStringa.add(sonar)
+	println(sonar)
    //jsonStringa.add(gitlab)
   //println(jsonStringa)
 /*def jsonStringa = bitbucket
