@@ -101,7 +101,7 @@ def total=jsonObjb.Bamboo.totalBuilds
        LIST.add(["toolName":name,"metricName":sonar_metric,"value":data])
 	    }
     }
-  
+  }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
