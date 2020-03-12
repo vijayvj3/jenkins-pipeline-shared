@@ -12,7 +12,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
   List<String> LIST = new ArrayList<String>();
   List<String> JSON1 = new ArrayList<String>();
 	List<String> jsonStringa= new ArrayList<String>();
-	jsonStringa.add(bamboo)
+	jsonStringa.add(jenkins)
    jsonStringa.add(gitlab)
 	 for(j=0;j<ecount;j++)
    {
