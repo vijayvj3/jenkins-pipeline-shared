@@ -1,6 +1,6 @@
 import groovy.json.*
 import groovy.json.JsonOutput
-def call(jsondata,bamboo,bitbucket,gitlab)
+def call(jsondata,bamboo,gitlab)
 {
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
@@ -13,7 +13,6 @@ int ecount = jsonObj.riglet_info.auth_users.size()
   List<String> JSON1 = new ArrayList<String>();
 	List<String> jsonStringa= new ArrayList<String>();
 	jsonStringa.add(bamboo)
-  jsonStringa.add(bitbucket)
    jsonStringa.add(gitlab)
 	 for(j=0;j<ecount;j++)
    {
