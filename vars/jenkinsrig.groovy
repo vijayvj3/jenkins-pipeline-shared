@@ -58,7 +58,7 @@ def resultJson = jsonSlurper.parse(reader)
 	  //print (state)
    def s=resultJson.builds[i].changeSets.size()
 	 // def e=resultJson.builds[0].changeSets[s-1].items[0].authorEmail
-	  println(e)
+	  //println(e)
 	  //print (s)
 	  if (s>0){
 		  if(resultJson.builds[i].changeSets[s-1].items[1].authorEmail.equals(email) && state.equals("SUCCESS"))
