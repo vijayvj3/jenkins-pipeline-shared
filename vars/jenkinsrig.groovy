@@ -50,8 +50,9 @@ def resultJson = jsonSlurper.parse(reader)
    {
 	   def cns=0
 	   def cnf=0
+	     def cni=0
     def email=jsonObj.riglet_info.auth_users[j]
-	   print(email)
+	   //print(email)
   for(i=1;i<value-1;i++)
   {
  
@@ -100,7 +101,8 @@ def resultJson = jsonSlurper.parse(reader)
    cnf=USERF.size()
    LISTFAILURE.add(["email":email,"failure":LISF[j],"Failure_cnt":cnf])
    USERF.clear()
-	LISTIN.add(["email":email,"success":LISS[j],"Success_cnt":cns])
+	 cni=USERI.size()
+	LISTIN.add(["email":email,"total":LISI[j],"total_cnt":cni])
    USERI.clear()
    }
 	for(i=1;i<value;i++)
@@ -135,7 +137,7 @@ def resultJson = jsonSlurper.parse(reader)
   "teamfailurebuild_cnt" :FAILURE.size(),
   "individualsuccess": LISTSUCCESS,
   "individualfailure": LISTFAILURE,
-  "individualfailure":LISTIN
+  "individualtotal":LISTIN
   )
 	
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/jenkins.json")
