@@ -29,7 +29,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
  
 	   
 	    
-     name="bamboo"
+     name="jenkins"
     //  def jsonStringb = bamboo
 	   // def jsonString1 = jsonStringa[i]
 	   def jsonObja = readJSON text: jsonStringa[i]
