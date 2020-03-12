@@ -37,6 +37,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
   //println(jsonObja)
   def scnt =jsonObja.JENKINS.individualsuccess[j].Success_cnt
   def fcnt =jsonObja.JENKINS.individualfailure[j].Failure_cnt
+	    def    total=jsonObja.JENKINS.individualtotal[j].total_cnt
  def email1=jsonObja.JENKINS.individualsuccess[j].email
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
@@ -46,7 +47,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	  
  if(email==email1)
   {
-   // LIST.add(["toolName":name,"metricName":"total_builds","value":total])
+   LIST.add(["toolName":name,"metricName":"total_builds","value":total])
 	    
  
 	   LIST.add(["toolName":name,"metricName":"successful_builds","value":scnt])
