@@ -77,10 +77,11 @@ def resultJson = jsonSlurper.parse(reader)
 	   
 	   USERF.add(resultJson.builds[i])
    }
-	 if(resultJson.builds[i].changeSets[s-1].items[0].authorEmail.equals(email))
+		  if(resultJson.builds[i].changeSets[s-1].items[0].authorEmail.equals(email)){
 		 
    
     USERI.add(resultJson.builds[i])
+		  
 	 
 	  
    }	  
