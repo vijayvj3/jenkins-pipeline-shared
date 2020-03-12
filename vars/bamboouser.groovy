@@ -69,7 +69,7 @@ def resultJson = jsonSlurper.parse(reader)
 	   
 	   USERF.add(resultJson.results.result[i])
    }
-	   else if(resultJson.results.result[i].buildReason.contains(email) )
+	   if(resultJson.results.result[i].buildReason.contains(email) )
    {
 	   
 	   USERI.add(resultJson.results.result[i])
