@@ -32,6 +32,9 @@ def resultJson = jsonSlurper.parse(reader)
 	List<String> SUCCESS = new ArrayList<String>()
     List<String> FAILURE = new ArrayList<String>()
 	 List<String> UNKNOWN = new ArrayList<String>()
+	List<String> USERI = new ArrayList<String>()
+ List<String>  LISTI=new ArrayList<String>()
+	 List<String>  LISIN=new ArrayList<String>()
 	
 	
 
@@ -45,6 +48,7 @@ def resultJson = jsonSlurper.parse(reader)
    {
 	   def cns=0
 	   def cnf=0
+	    def cni=0
 	  
     def email=jsonObj.riglet_info.auth_users[j] 
   for(i=0;i<bno;i++)
@@ -65,12 +69,18 @@ def resultJson = jsonSlurper.parse(reader)
 	   
 	   USERF.add(resultJson.results.result[i])
    }
+	   else if(resultJson.results.result[i].buildReason.contains(email) )
+   {
+	   
+	   USERI.add(resultJson.results.result[i])
+   }
    }
    cns=USERS.size()
 
 	
 	   LISS[j]=USERS.clone()
 	   LISF[j]=USERF.clone()
+	   LISI[j]=USERI.clone()
 	   
    LISTSUCCESS.add(["email":email,"success":LISS[j],"Success_cnt":cns])
    USERS.clear()
@@ -78,6 +88,9 @@ def resultJson = jsonSlurper.parse(reader)
    cnf=USERF.size()
    LISTFAILURE.add(["email":email,"failure":LISF[j],"Failure_cnt":cnf])
    USERF.clear()
+	   cni=USERI.size()
+   LISTIN.add(["email":email,"total":LISI[j],"totalBuilds":cni])
+   USERI.clear()
 	  
 	   
    }
@@ -111,7 +124,8 @@ def resultJson = jsonSlurper.parse(reader)
   "teamfailure" : FAILURE,
   "teamfailurebuild_cnt" :FAILURE.size(),
   "individualsuccess": LISTSUCCESS,
-  "individualfailure": LISTFAILURE
+  "individualfailure": LISTFAILURE,
+   "individualtotal":LISTIN
   )
 	
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/bamboo.json")
