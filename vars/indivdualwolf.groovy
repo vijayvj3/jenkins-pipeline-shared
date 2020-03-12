@@ -1,6 +1,6 @@
 import groovy.json.*
 import groovy.json.JsonOutput
-def call(jsondata,bamboo,gitlab)
+def call(jsondata,jenkins,gitlab)
 {
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
