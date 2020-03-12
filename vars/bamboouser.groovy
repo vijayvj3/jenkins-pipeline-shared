@@ -33,8 +33,8 @@ def resultJson = jsonSlurper.parse(reader)
     List<String> FAILURE = new ArrayList<String>()
 	 List<String> UNKNOWN = new ArrayList<String>()
 	List<String> USERI = new ArrayList<String>()
- List<String>  LISTI=new ArrayList<String>()
-	 List<String>  LISIN=new ArrayList<String>()
+ List<String>  LISI=new ArrayList<String>()
+	 List<String>  LISTIN=new ArrayList<String>()
 	
 	
 
