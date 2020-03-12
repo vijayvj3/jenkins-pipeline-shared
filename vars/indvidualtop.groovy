@@ -17,8 +17,8 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	 for(j=0;j<ecount;j++)
    {
 	 def email=jsonObj.riglet_info.auth_users[j]
-	   int score=0
-    int reward=0
+	//   int score=0
+   // int reward=0
     String name="  "
 	 for(i=0;i<jsonStringa.size();i++)
   { 
