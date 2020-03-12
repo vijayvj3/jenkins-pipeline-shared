@@ -58,7 +58,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	   
 	  if(jsonStringa[i].contains("bitbucket"))
       {
-        name="bitbucket
+        name="bitbucket"
 	      //metric="commits"
         def jsonObjc= readJSON text: jsonStringa[i]
   //println(jsonObj)
