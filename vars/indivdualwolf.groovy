@@ -35,9 +35,9 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	   def jsonObja = readJSON text: jsonStringa[i]
 
   //println(jsonObja)
-  def scnt =jsonObja.Bamboo.individualsuccess[j].Success_cnt
-  def fcnt =jsonObja.Bamboo.individualfailure[j].Failure_cnt
- def email1=jsonObja.Bamboo.individualsuccess[j].email
+  def scnt =jsonObja.JENKINS.individualsuccess[j].Success_cnt
+  def fcnt =jsonObja.JENKINS.individualfailure[j].Failure_cnt
+ def email1=jsonObja.JENKINS.individualsuccess[j].email
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
