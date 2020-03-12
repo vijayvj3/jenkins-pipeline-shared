@@ -36,7 +36,9 @@ def resultJson = jsonSlurper.parse(reader)
 	List<String> LISTFAILURE=new ArrayList<String>()
 	List<String> SUCCESS = new ArrayList<String>()
     List<String> FAILURE = new ArrayList<String>()
-	
+	List<String> USERI = new ArrayList<String>()
+ List<String>  LISI=new ArrayList<String>()
+	 List<String>  LISTIN=new ArrayList<String>()
 
 
  
@@ -74,7 +76,13 @@ def resultJson = jsonSlurper.parse(reader)
 	   
 	   USERF.add(resultJson.builds[i])
    }
-		  
+	 if(resultJson.builds[i].changeSets[s-1].items[0].authorEmail.equals(email))
+		 
+   
+    USERI.add(resultJson.builds[i])
+	 
+	  
+   }	  
 		  
 	  }
 	  //int len = s-1;
@@ -84,6 +92,7 @@ def resultJson = jsonSlurper.parse(reader)
 	
 	   LISS[j]=USERS.clone()
 	   LISF[j]=USERF.clone()
+	 LISI[j]=USERF.clone()
 	   
    LISTSUCCESS.add(["email":email,"success":LISS[j],"Success_cnt":cns])
    USERS.clear()
@@ -91,6 +100,8 @@ def resultJson = jsonSlurper.parse(reader)
    cnf=USERF.size()
    LISTFAILURE.add(["email":email,"failure":LISF[j],"Failure_cnt":cnf])
    USERF.clear()
+	LISTIN.add(["email":email,"success":LISS[j],"Success_cnt":cns])
+   USERI.clear()
    }
 	for(i=1;i<value;i++)
   {
@@ -123,7 +134,8 @@ def resultJson = jsonSlurper.parse(reader)
   "teamfailure" : FAILURE, 
   "teamfailurebuild_cnt" :FAILURE.size(),
   "individualsuccess": LISTSUCCESS,
-  "individualfailure": LISTFAILURE
+  "individualfailure": LISTFAILURE,
+  "individualfailure":LISTIN
   )
 	
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/jenkins.json")
