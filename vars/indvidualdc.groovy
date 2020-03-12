@@ -46,7 +46,7 @@ int ecount = jsonObj.riglet_info.auth_users.size()
 	  
  if(email==email1)
   {
-    LIST.add(["toolName":name,"metricName":"total_builds","value":total])
+   // LIST.add(["toolName":name,"metricName":"total_builds","value":total])
 	    
  
 	    LIST.add(["toolName":name,"metricName":"success_builds","value":scnt])
