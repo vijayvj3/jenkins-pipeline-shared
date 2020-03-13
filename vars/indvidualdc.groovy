@@ -89,5 +89,5 @@ jsonBuilder(
  // File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/game.json")
 //file.write(jsonBuilder.toPrettyString())
     
-  println(jsonBuilder)
+  println(jsonBuilder.toPrettyString())
 }
